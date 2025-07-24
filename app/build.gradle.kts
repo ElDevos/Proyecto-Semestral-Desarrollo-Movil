@@ -66,5 +66,10 @@ dependencies {
     //Navigation
     implementation(libs.androidx.navigation.compose)
     //Hilt,Corrutinas,DataStore,Flow,Room
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    //Carrusel de imagenes
+    implementation ("com.google.accompanist:accompanist-pager:0.34.0")
+    implementation ("com.google.accompanist:accompanist-pager-indicators:0.34.0")
+
 
 }

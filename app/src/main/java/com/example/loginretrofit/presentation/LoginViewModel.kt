@@ -1,12 +1,13 @@
 package com.example.loginretrofit.presentation
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
 import com.example.loginretrofit.data.LoginRequest
 import com.example.loginretrofit.data.RegisterRequest
+import com.example.loginretrofit.data.local.TokenManager
 import com.example.loginretrofit.data.remote.RetrofitInstance
 
 class LoginViewModel : ViewModel() {
@@ -16,7 +17,7 @@ class LoginViewModel : ViewModel() {
     var errorMessage by mutableStateOf<String?>(null)
     var isLoggedIn by mutableStateOf(false)
 
-    fun login() {
+    fun login(context: Context) {
         errorMessage = null
         if (!email.contains("@")) {
             errorMessage = "Correo inválido"
@@ -29,10 +30,18 @@ class LoginViewModel : ViewModel() {
 
         viewModelScope.launch {
             isLoading = true
+            val tokenManager = TokenManager(context)
+
             try {
                 val response = RetrofitInstance.api.login(LoginRequest(email, password))
                 if (response.isSuccessful) {
-                    isLoggedIn = true
+                    val token = response.body()?.token
+                    if (!token.isNullOrEmpty()) {
+                        tokenManager.saveToken(token)
+                        isLoggedIn = true
+                    } else {
+                        errorMessage = "Token no recibido"
+                    }
                 } else {
                     errorMessage = "Login fallido: ${response.code()}"
                 }
@@ -42,6 +51,7 @@ class LoginViewModel : ViewModel() {
             isLoading = false
         }
     }
+
     fun register(
         name: String,
         lastname: String,
