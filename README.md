@@ -32,5 +32,13 @@ Aplicación de supermercado desarrollada como MVP (Producto Mínimo Viable) para
 - MySQL / MariaDB
 - Docker (para despliegue en Render)
 
-## 🧩 Estructura del Proyecto
+
+## 🖼️ Capturas de Pantalla
+
+| Pantalla Principal | Carrito de Compras | Historial de Pedidos |
+|--------------------|--------------------|-----------------------|
+| ![home](https://github.com/ElDevos/Proyecto-Semestral-Desarrollo-Movil/blob/f13ca069c5ec1e3d0c6803644bea371d74fb77e2/Home.png) | ![cart](screenshots/cart.png) | ![orders](screenshots/orders.png) |
+
+
+
 
