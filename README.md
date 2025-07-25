@@ -35,9 +35,9 @@ Aplicación de supermercado desarrollada como MVP (Producto Mínimo Viable) para
 
 ## 🖼️ Capturas de Pantalla
 
-| Pantalla Principal | Carrito de Compras | Historial de Pedidos |
+| Pantalla Principal | Login | Orders |
 |--------------------|--------------------|-----------------------|
-| ![home](https://github.com/ElDevos/Proyecto-Semestral-Desarrollo-Movil/blob/f13ca069c5ec1e3d0c6803644bea371d74fb77e2/Home.png) | ![cart](screenshots/cart.png) | ![orders](screenshots/orders.png) |
+| ![home](https://github.com/ElDevos/Proyecto-Semestral-Desarrollo-Movil/blob/f13ca069c5ec1e3d0c6803644bea371d74fb77e2/Home.png) | ![login](https://github.com/ElDevos/Proyecto-Semestral-Desarrollo-Movil/blob/13b181ef7405c42c66909708b00cc68938418e5e/login.png) | ![orders](https://github.com/ElDevos/Proyecto-Semestral-Desarrollo-Movil/blob/13b181ef7405c42c66909708b00cc68938418e5e/Orders.png) |
 
 
 
